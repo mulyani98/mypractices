@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <group android:id="@+id/title_group"
+        android:checkableBehavior="single">
+<!--        don't know the functions above-->
+        <item
+            android:id="@+id/nav_title"
+            android:title="@string/iprint_info"/>
+        <!--        android:icon="@drawable/announcements"/>-->
+    </group>
+
+    <group android:id="@+id/menus_group">
+       <item
+           android:id="@+id/nav_announcement"
+           android:title="Announcements"
+           android:icon="@drawable/announcements"/>
+
+       <item
+           android:id="@+id/nav_faq"
+           android:title="FAQ"
+           android:icon="@drawable/faq"/>
+
+       <item
+           android:id="@+id/nav_sla"
+           android:title="Software License Agreement"
+           android:icon="@drawable/sla"/>
+
+       <item
+           android:id="@+id/nav_ossl"
+           android:title="Open Source Software License"
+           android:icon="@drawable/open_source"/>
+
+       <item
+           android:id="@+id/nav_privacy"
+           android:title="Privacy"
+           android:icon="@drawable/privacy"/>
+
+       <item
+           android:id="@+id/nav_usage_survey"
+           android:title="Usage Survey"
+           android:icon="@drawable/survey_black"/>
+
+       <item
+           android:id="@+id/nav_device_info"
+           android:title="Device Information"
+           android:icon="@drawable/device_information"/>
+
+       <item
+           android:id="@+id/nav_check_support"
+           android:title="Check Supported Printer"
+           android:icon="@drawable/check_printer"/>
+
+       <item
+           android:id="@+id/nav_about"
+           android:title="About"
+           android:icon="@drawable/about"/>
+
+   </group>
+
+</menu>
+
+<!--TODO correct the iPrint tittle to make invisible when the drawer
+is clicked, and make the better size for every line of your menus  -->
