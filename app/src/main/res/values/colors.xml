@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+<!--    Color that I used in ppt
+        Ice blue 209 225 237
+        steelblue isn't dark enough for font color-->
+    <color name="almostdark_blue">#FF3700B3</color>
+    <color name="steelblue">#6699CC</color>
+    <color name="mint_blue">#F8FFFF</color>
+
 </resources>

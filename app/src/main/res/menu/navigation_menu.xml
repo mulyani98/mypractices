@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="HardcodedText">
 
-    <group android:id="@+id/title_group"
-        android:checkableBehavior="single">
+    <group android:id="@+id/title_group">
+<!--        android:checkableBehavior="single">-->
 <!--        don't know the functions above-->
         <item
             android:id="@+id/nav_title"

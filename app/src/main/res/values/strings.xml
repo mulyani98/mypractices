@@ -1,9 +1,15 @@
 <resources>
-    <string name="app_name">iPrint Mulyani</string>
+    <string name="app_name">muu\'s iprint</string>
 
     <!--to toggle the open close button
         of the navigation drawer-->
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
     <string name="iprint_info">iPrint Information</string>
+    <string name="splash">EPSON</string>
+
+    <string name="viewby">View By</string>
+    <string name="sortby">Sort By</string>
+    <string name="done">Done</string>
+
 </resources>

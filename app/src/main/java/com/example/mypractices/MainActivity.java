@@ -1,12 +1,16 @@
 package com.example.mypractices;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,7 +39,34 @@ public class MainActivity extends AppCompatActivity {
         /*
         * to make the Navigation Drawer icon always appear on the action bar */
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        /*
+        * PRINT PHOTO BUTTON */
+        Button printPhotoButton = findViewById(R.id.print_photo_button);
+        printPhotoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PrintPhotoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+//        /*
+//        * BACK BUTTON */
+//        if (getSupportActionBar() != null) {
+//            ActionBar backButton = getSupportActionBar();
+//            backButton.setDisplayHomeAsUpEnabled(true);
+//            //getSupportActionBar().setTitle(filteredImages.get(0).getFolderName());
+//        }
     }
+
+//    //back button
+//    @Override
+//    public boolean onSupportNavigateUp() {
+//        onBackPressed();
+//        return true;
+//    }
 
     /*
     * override the onOptionItemSelected() function to implement the item click listener callback
