@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         * to make the Navigation Drawer icon always appear on the action bar */
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         /*
         * PRINT PHOTO BUTTON */
         Button printPhotoButton = findViewById(R.id.print_photo_button);
@@ -75,7 +74,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)){
+//            getSupportActionBar().setTitle(R.string.iprint_info);
+//            getSupportActionBar().setDisplayShowTitleEnabled(false);
+
             return true;
+        }
+        else{
+//            getSupportActionBar().setTitle(R.string.app_name);
+//            getSupportActionBar().setDisplayShowTitleEnabled(true);
         }
         return super.onOptionsItemSelected(item);
     }

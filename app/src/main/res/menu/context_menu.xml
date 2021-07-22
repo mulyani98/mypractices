@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.home.activities.TransactionSearchActivity">
+
     <item android:id="@+id/option_Viewby"
         android:title="@string/viewby"/>
     <item android:id="@+id/option_Sortby"
         android:title="@string/sortby"/>
 
-<!--    <group android:id="@+id/option_Viewby"-->
-<!--        android:checkableBehavior="none">-->
-<!--        &lt;!&ndash;        don't know the functions above&ndash;&gt;-->
-<!--        <item-->
-<!--            android:id="@+id/viewby"-->
-<!--            android:title="View By"-->
-<!--            android:menuCategory="system"/>-->
-<!--        &lt;!&ndash;        android:icon="@drawable/announcements"/>&ndash;&gt;-->
-<!--    </group>-->
+    <item
+        android:id="@+id/searchButton"
+        android:icon="@drawable/search"
+        android:title="@string/search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
 </menu>

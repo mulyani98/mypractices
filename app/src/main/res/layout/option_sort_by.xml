@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/textSortBy"
@@ -15,132 +16,134 @@
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.192"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
+        android:layout_gravity="start"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="40dp"/>
 
-    <TextView
-        android:id="@+id/textName"
-        android:layout_width="49dp"
-        android:layout_height="22dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:text="Name"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.29"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_gravity="center_horizontal">
 
-    <CheckBox
-        android:id="@+id/checkboxName"
-        android:layout_width="29dp"
-        android:layout_height="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDoneSortBy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toEndOf="@+id/textName"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/textDate"
-        android:layout_width="49dp"
-        android:layout_height="22dp"
-        android:layout_marginBottom="324dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:text="Date"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.29"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textName" />
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Name"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_gravity="start"
+                android:layout_marginEnd="40dp"/>
 
-    <CheckBox
-        android:id="@+id/checkboxDate"
-        android:layout_width="29dp"
-        android:layout_height="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDoneSortBy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.397"
-        app:layout_constraintStart_toEndOf="@+id/textDesc"
-        app:layout_constraintTop_toBottomOf="@+id/checkboxAsc"
-        app:layout_constraintVertical_bias="0.531" />
+            <CheckBox
+                android:id="@+id/checkboxName"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"/>
 
-    <TextView
-        android:id="@+id/textAsc"
-        android:layout_width="96dp"
-        android:layout_height="29dp"
-        android:layout_marginBottom="68dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:text="Ascending"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textDate"
-        app:layout_constraintVertical_bias="0.154" />
+        </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/checkboxAsc"
-        android:layout_width="29dp"
-        android:layout_height="23dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="68dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDoneSortBy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintStart_toEndOf="@+id/textAsc"
-        app:layout_constraintTop_toBottomOf="@+id/checkboxDesc"
-        app:layout_constraintVertical_bias="0.627" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/textDesc"
-        android:layout_width="96dp"
-        android:layout_height="29dp"
-        android:layout_marginBottom="120dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:text="Descending"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textAsc"
-        app:layout_constraintVertical_bias="0.193" />
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Date"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_gravity="start"
+                android:layout_marginEnd="40dp"/>
 
-    <CheckBox
-        android:id="@+id/checkboxDesc"
-        android:layout_width="29dp"
-        android:layout_height="23dp"
-        android:layout_marginEnd="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDoneSortBy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.929"
-        app:layout_constraintStart_toEndOf="@+id/textDate"
-        app:layout_constraintTop_toBottomOf="@+id/checkboxName"
-        app:layout_constraintVertical_bias="0.252" />
+            <CheckBox
+                android:id="@+id/checkboxDate"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_gravity="center_horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/textAsc"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Ascending"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_gravity="start"
+                android:layout_marginEnd="40dp"/>
+
+            <CheckBox
+                android:id="@+id/checkboxAsc"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/textDecs"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="Descending"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_gravity="start"
+                android:layout_marginEnd="40dp"/>
+
+            <CheckBox
+                android:id="@+id/checkboxDesc"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonDoneSortBy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="164dp"
         android:text="@string/done"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.77"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"/>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

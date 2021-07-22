@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/textViewBy"
@@ -15,100 +16,81 @@
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
+        android:layout_gravity="start"
+        android:layout_marginBottom="20dp"/>
 
-    <ImageView
-        android:id="@+id/imageGrid"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/grid"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.265"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewBy"
-        app:layout_constraintVertical_bias="0.065" />
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_gravity="center">
 
-    <TextView
-        android:id="@+id/textGrid"
-        android:layout_width="49dp"
-        android:layout_height="22dp"
-        android:layout_marginEnd="144dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:text="Icons"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageGrid"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.478" />
+        <ImageView
+            android:id="@+id/imageGrid"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/grid"
+            android:layout_marginEnd="25dp" />
 
-    <CheckBox
-        android:id="@+id/checkboxGrid"
-        android:layout_width="29dp"
-        android:layout_height="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDoneViewBy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
-        app:layout_constraintStart_toEndOf="@+id/textGrid"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867" />
+        <TextView
+            android:id="@+id/textGrid"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="Grid"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
-    <ImageView
-        android:id="@+id/imageList"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:src="@drawable/list"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.265"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageGrid"
-        app:layout_constraintVertical_bias="0.077" />
+        <CheckBox
+            android:id="@+id/checkboxGrid"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="50dp"/>
 
-    <TextView
-        android:id="@+id/textList"
-        android:layout_width="49dp"
-        android:layout_height="22dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:text="Lists"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
-        app:layout_constraintStart_toEndOf="@+id/imageList"
-        app:layout_constraintTop_toBottomOf="@+id/textGrid"
-        app:layout_constraintVertical_bias="0.071" />
+    </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/checkboxList"
-        android:layout_width="29dp"
-        android:layout_height="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonDoneViewBy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
-        app:layout_constraintStart_toEndOf="@+id/textList"
-        app:layout_constraintTop_toBottomOf="@+id/checkboxGrid"
-        app:layout_constraintVertical_bias="0.448" />
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/imageList"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/list" />
+
+        <TextView
+            android:id="@+id/textList"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="sans-serif-condensed-light"
+            android:text="Lists"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/checkboxList"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="50dp"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonDoneViewBy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/done"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.811"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textList"
-        app:layout_constraintVertical_bias="0.029" />
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
