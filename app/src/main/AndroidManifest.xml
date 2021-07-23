@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/iconskkk2"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Mypractices"
+        android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory"
         android:appComponentFactory="androidx"
         >

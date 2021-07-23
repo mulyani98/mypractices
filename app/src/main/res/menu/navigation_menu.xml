@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="HardcodedText">
 
-    <group android:id="@+id/title_group">
+    <group android:id="@+id/title_group"
+        android:checkableBehavior="none">
 <!--        android:checkableBehavior="single">-->
 <!--        don't know the functions above-->
         <item
             android:id="@+id/nav_title"
             android:title="@string/iprint_info"/>
-        <!--        android:icon="@drawable/announcements"/>-->
     </group>
 
     <group android:id="@+id/menus_group">
        <item
            android:id="@+id/nav_announcement"
            android:title="Announcements"
-           android:icon="@drawable/announcements"/>
+           android:icon="@drawable/announcements" />
 
        <item
            android:id="@+id/nav_faq"

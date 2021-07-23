@@ -6,16 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PrintPhotoActivity">
+    tools:context=".PrintPhotoActivity"
+    android:background="@color/mintwhite">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabBackground="@android:color/darker_gray"
-        app:tabIndicatorColor="@color/almostdark_blue"
-        app:tabSelectedTextColor="@color/steelblue"
-        app:tabTextColor="@color/black" />
+        app:tabBackground="@color/mintwhite"
+        app:tabIndicatorColor="@color/dodgerblue4"
+        app:tabSelectedTextColor="@color/dodgerblue4"
+        app:tabTextColor="@color/bluesemiblack"
+        android:layout_marginTop="10dp"/>
 
     <FrameLayout
         android:id="@+id/frameLayout"

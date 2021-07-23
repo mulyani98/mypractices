@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
     android:padding="20dp">
@@ -14,7 +14,7 @@
         android:fontFamily="sans-serif-condensed-medium"
         android:text="@string/viewby"
         android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:layout_gravity="start"
         android:layout_marginBottom="20dp"/>
@@ -40,8 +40,8 @@
             android:layout_margin="10dp"
             android:fontFamily="sans-serif-condensed-light"
             android:text="Grid"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textColor="@color/bluesemiblack"
+            android:textSize="15sp" />
 
         <CheckBox
             android:id="@+id/checkboxGrid"
@@ -73,8 +73,8 @@
             android:layout_margin="10dp"
             android:fontFamily="sans-serif-condensed-light"
             android:text="Lists"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textColor="@color/bluesemiblack"
+            android:textSize="15sp" />
 
         <CheckBox
             android:id="@+id/checkboxList"

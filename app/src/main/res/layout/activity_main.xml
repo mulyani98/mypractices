@@ -8,27 +8,261 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    tools:ignore="HardcodedText">
+    tools:ignore="HardcodedText"
+    android:background="@color/mintwhite">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/imagePrinter"
+            android:layout_width="140dp"
+            android:layout_height="136dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/printer"
+            android:layout_marginBottom="10dp"/>
 
         <TextView
+            android:id="@+id/textPrinter"
+            style="@android:style/Widget.DeviceDefault.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="128dp"
-            android:gravity="center"
-            android:text="Home Screen"
-            android:textSize="18sp" />
+            android:fontFamily="sans-serif-black"
+            android:text="Printer A"
+            android:textColor="@color/dodgerblue2"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:id="@+id/buttonTapPrinter"
+            style="@android:style/Widget.Material.Light.Button"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:text="Tap here to change a printer"
+            android:textAlignment="center"
+            android:layout_gravity="center_vertical"
+            android:textAllCaps="false"
+            android:textColor="@color/bluesemiblack"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PRINT PHOTO"
-            android:id="@+id/print_photo_button"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPrintPhoto"
+                android:layout_width="111dp"
+                android:layout_height="146dp"
+                android:background="@color/bluegray"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewPrintPhoto"
+                    android:layout_width="87dp"
+                    android:layout_height="77dp"
+                    android:clickable="true"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/printerphotos" />
+
+                <TextView
+                    android:id="@+id/textViewPrintPhotos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Print"
+                    android:textColor="@color/dodgerblue4"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewPrintPhotos2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Photos"
+                    android:textColor="@color/dodgerblue4"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPrintDocs"
+                android:layout_width="111dp"
+                android:layout_height="146dp"
+                android:background="@color/bluegray"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewPrintDocs"
+                    android:layout_width="87dp"
+                    android:layout_height="77dp"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/printerdoc" />
+
+                <TextView
+                    android:id="@+id/textViewPrintDoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Print"
+                    android:textColor="@color/dodgerblue4"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewPrintDoc2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Documents"
+                    android:textColor="@color/dodgerblue4"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPrintCloud"
+                android:layout_width="111dp"
+                android:layout_height="146dp"
+                android:background="@color/bluegray"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewPrintCloud"
+                    android:layout_width="87dp"
+                    android:layout_height="77dp"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/cloud" />
+
+                <TextView
+                    android:id="@+id/textViewPrintCloud"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Print from"
+                    android:textColor="@color/dodgerblue4"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewPrintCloud2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Cloud"
+                    android:textColor="@color/dodgerblue4"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutScan"
+                android:layout_width="111dp"
+                android:layout_height="146dp"
+                android:background="@color/bluegray"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewScan"
+                    android:layout_width="87dp"
+                    android:layout_height="77dp"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/scanner" />
+
+                <TextView
+                    android:id="@+id/textViewScan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center_horizontal"
+                    android:text="Scan"
+                    android:textColor="@color/dodgerblue4"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutDocCap"
+                android:layout_width="111dp"
+                android:layout_height="146dp"
+                android:background="@color/bluegray"
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/imageViewDocCap"
+                    android:layout_width="87dp"
+                    android:layout_height="77dp"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/file" />
+
+                <TextView
+                    android:id="@+id/textViewDocCap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Document"
+                    android:textColor="@color/dodgerblue4"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewDocCap2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Capture"
+                    android:textColor="@color/dodgerblue4"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -39,6 +273,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/navigation_menu" />
+        app:menu="@menu/navigation_menu"
+        android:background="@color/mintwhite"
+        app:itemTextAppearance="@style/NavigationFont"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
