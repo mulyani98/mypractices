@@ -17,9 +17,9 @@
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/dodgerblue3</item>
-        <item name="colorPrimaryDark">@color/dodgerblue4</item>
-        <item name="colorAccent">@color/dodgerblue3</item>
+        <item name="colorPrimary">@color/dodgerblue4</item>
+        <item name="colorPrimaryDark">@color/dodgerblue5</item>
+        <item name="colorAccent">@color/dodgerblue4</item>
 
         <!--        color primary (app bar)
                     color primarydarkq status bar and contextual app bar

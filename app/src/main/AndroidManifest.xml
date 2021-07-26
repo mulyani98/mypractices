@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mypractices">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
-        android:icon="@drawable/iconskkk2"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/iconskkk2"
+
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory"
@@ -23,6 +26,7 @@
         </activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".PrintPhotoActivity"></activity>
+
     </application>
 
 </manifest>

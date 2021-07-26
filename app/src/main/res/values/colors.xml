@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="almostdark_blue">#FF3700B3</color>
-    <color name="steelblue">#6699CC</color>
-
     <color name="dodgerblue1">#1e90ff</color>
     <color name="dodgerblue2">#1c86ee</color>
     <color name="dodgerblue3">#1874cd</color>
     <color name="dodgerblue4">#104e8b</color>
+    <color name="dodgerblue5">#123B63</color>
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>

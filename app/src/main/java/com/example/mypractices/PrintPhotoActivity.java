@@ -1,10 +1,16 @@
 package com.example.mypractices;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,15 +18,21 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.GridView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
@@ -30,9 +42,17 @@ import androidx.fragment.app.FragmentTransaction;
 public class PrintPhotoActivity extends AppCompatActivity {
     FrameLayout frameLayout;
     TabLayout tabLayout;
+    ArrayList<PhotoModel> arrayListPhotos;
+    Fragment fragment = null;
+
 
     final Context context = this; //for custom dialog
 //    SearchView searchView;
+    private static final int REQUEST_PERMISSIONS = 100;
+
+    PhotoAdapter photoAdapter;
+    GridView gridViewPhotos;
+    boolean booleanFolder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,7 +78,7 @@ public class PrintPhotoActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 // get the current selected tab's position and replace the fragment accordingly
-                Fragment fragment = null;
+
                 switch (tab.getPosition()){
                     case 0:
                         fragment = new AllPhotoFragment();
@@ -92,6 +112,25 @@ public class PrintPhotoActivity extends AppCompatActivity {
             ActionBar backButton = getSupportActionBar();
             backButton.setDisplayHomeAsUpEnabled(true);
             //getSupportActionBar().setTitle(filteredImages.get(0).getFolderName());
+        }
+
+        /* PERMISSION */
+        if ((ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) && (ContextCompat.checkSelfPermission(getApplicationContext(),
+                Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)) {
+            if ((ActivityCompat.shouldShowRequestPermissionRationale(PrintPhotoActivity.this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)) && (ActivityCompat.shouldShowRequestPermissionRationale(PrintPhotoActivity.this,
+                    Manifest.permission.READ_EXTERNAL_STORAGE))) {
+
+            } else {
+                ActivityCompat.requestPermissions(PrintPhotoActivity.this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
+                        REQUEST_PERMISSIONS);
+            }
+        }
+        else {
+            Log.e("Else","Else");
+
         }
     }
     //back button
@@ -227,5 +266,88 @@ public class PrintPhotoActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull @NotNull String[] permissions, @NonNull @NotNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode){
+            case REQUEST_PERMISSIONS: {
+                for (int i = 0; i < grantResults.length; i++){
+                    if (grantResults.length > 0 && grantResults[i] == PackageManager.PERMISSION_GRANTED){
+
+                    }
+                    else{
+                        Toast.makeText(PrintPhotoActivity.this, "The app was not allowed to read or write your storage", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        }
+    }
+
+    public ArrayList<PhotoModel> albumNamePhotoPath(){
+        arrayListPhotos.clear();
+
+        int intPosition = 0;
+        Uri uri;
+        Cursor cursor;
+        int columnIndexData, columnIndexAlbumName;
+
+
+        String absolutePathPhoto = null;
+        uri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+
+        String[] projection = {MediaStore.MediaColumns.DATA, MediaStore.Images.Media.BUCKET_DISPLAY_NAME};
+
+        final String orderBy = MediaStore.Images.Media.DATE_TAKEN;
+        cursor = getApplicationContext().getContentResolver().query(uri, projection, null, null, orderBy + "DESC");
+//        cursor = getApplicationContext().getContentResolver().query(uri, projection, null, null, orderBy + "DESC");
+
+        columnIndexData = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DATA);
+        columnIndexAlbumName = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.BUCKET_DISPLAY_NAME);
+
+        while (cursor.moveToNext()){
+            absolutePathPhoto = cursor.getString(columnIndexData);
+            Log.e("Column", absolutePathPhoto);
+            Log.e("Folder", cursor.getString(columnIndexAlbumName));
+
+            for (int i = 0; i < arrayListPhotos.size(); i++){
+                if (arrayListPhotos.get(i).getAlbumName().equals(cursor.getString(columnIndexAlbumName))){
+                    booleanFolder = true;
+                    intPosition = i;
+                    break;
+                }
+                else {
+                    booleanFolder = false;
+                }
+            }
+
+            if (booleanFolder){
+                ArrayList<String> arrayListPath = new ArrayList<>();
+                arrayListPath.addAll(arrayListPhotos.get(intPosition).getArrayList_PhotoPath());
+                arrayListPath.add(absolutePathPhoto);
+                arrayListPhotos.get(intPosition).setArrayList_PhotoPath(arrayListPath);
+            }
+            else{
+                ArrayList<String> arraListPath = new ArrayList<>();
+                arraListPath.add(absolutePathPhoto);
+                PhotoModel photoModel = new PhotoModel();
+                photoModel.setAlbumName(cursor.getString(columnIndexAlbumName));
+                photoModel.setArrayList_PhotoPath(arraListPath);
+
+                arrayListPhotos.add(photoModel);
+            }
+        }
+
+        for (int i=0; i < arrayListPhotos.size(); i++){
+            Log.e("ALBUM", arrayListPhotos.get(i).getAlbumName());
+            for (int j=0; j < arrayListPhotos.get(i).getArrayList_PhotoPath().size(); j++){
+                Log.e("PHOTO", arrayListPhotos.get(i).getArrayList_PhotoPath().get(j));
+            }
+        }
+        photoAdapter = new PhotoAdapter(getApplicationContext(), arrayListPhotos, intPosition);
+        gridViewPhotos.setAdapter(photoAdapter);
+        return arrayListPhotos;
     }
 }
